@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map'
 import { Observable } from 'rxjs/Observable';
-// import { Toy } from '../models/toy';
+import { Toy } from './toy';
 import { Configuration } from './configuration';
 
 @Injectable()

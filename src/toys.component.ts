@@ -2,8 +2,7 @@
 // import {Component} from 'angular2/core';
 // import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {
-  Component,
-  // CORE_DIRECTIVES
+  Component, OnInit
 } from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import { DataService } from './dataService';

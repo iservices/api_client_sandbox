@@ -3,7 +3,8 @@ System.config({
   transpiler: 'typescript',
   //typescript compiler options
   typescriptOptions: {
-    emitDecoratorMetadata: true
+    emitDecoratorMetadata: true,
+    experimentalDecorators: true
   },
   //map tells the System loader where to look for things
   map: {

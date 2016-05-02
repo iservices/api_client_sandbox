@@ -49,7 +49,7 @@ export class ToyComponent implements OnInit {
     private saveItem(sport:string, type:string): void {
         let toyToAdd = new Toy();
         toyToAdd.sport = sport;
-        toyToAdd.type = 'foo';
+        toyToAdd.type = type;
         let retVal;
         this._dataService
             .Add(toyToAdd)

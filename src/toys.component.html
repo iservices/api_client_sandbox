@@ -2,12 +2,12 @@
 <div>
   <form>
     <input #toyId placeholder="toy id">
-    <button (click)=getItem(toyId.value)>Retrieve Toy by Id</button>
+    <button (click)="getItem(toyId.value)">Retrieve Toy by Id</button>
     <hr/>
     <br/>
     <input #toySport placeholder="toy sport">
     <input #toyType placeholder="toy type">
-    <button (click)=saveItem(toySport.value)>Create Toy</button>
+    <button (click)="saveItem(toySport.value, toyType.value)">Create New Toy</button>
     <br/>
   </form>
 </div>

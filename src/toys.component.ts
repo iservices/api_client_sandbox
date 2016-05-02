@@ -14,14 +14,7 @@ import { Configuration } from './configuration';
     // providers: [],
     // directives: [CORE_DIRECTIVES],
     directives: [],
-    template: `
-    <div *ngFor="#toy of toys; var index=index">
-      Id: {{toy.id}}<br/>
-      Sport: {{toy.sport}}<br/>
-      Type: {{toy.type}}
-      <hr>
-    </div>
-  `,
+    templateUrl: 'src/toys.component.html'
 })
 
  export class ToyComponent implements OnInit {

@@ -8,9 +8,9 @@
     <input #toySport placeholder="toy sport">
     <input #toyType placeholder="toy type">
     <button (click)="saveItem(toySport.value, toyType.value)">Create New Toy</button>
-    <br/>
   </form>
 </div>
+<br/>
 <br/>
 <div *ngFor="#toy of toys; var index=index">
   Id: {{toy.id}}<br/>

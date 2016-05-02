@@ -18,10 +18,13 @@ export class ToyComponent implements OnInit {
    // TODO get these data from API call
   
   public toys:Toy[] = [];
+  public currentToy:Toy;
   constructor(private _dataService: DataService) { }
   
     ngOnInit() {
       this.getAllItems();
+      //this.currentToy = this.toys[0];
+      // console.log('currentToy: ' + this.currentToy.id);
     }
     
     //...
@@ -32,7 +35,7 @@ export class ToyComponent implements OnInit {
             .subscribe(
                 (data: any) => this.toys = data,
                 error => console.log(error),
-                () => console.log('Get all Items complete')
+                () => console.log('Get all Items complete.')
                 );
     }
     
@@ -41,6 +44,7 @@ export class ToyComponent implements OnInit {
             .GetSingle(id)
             .subscribe(
                 (data: any) => this.toys = data,
+                //(data: any) => this.currentToy = data,
                 error => console.log(error),
                 () => console.log('Get Item complete')
                 );
@@ -54,8 +58,7 @@ export class ToyComponent implements OnInit {
         this._dataService
             .Add(toyToAdd)
             .subscribe(
-                // (data: any) => retVal = data,
-                (data: any) => this.getAllItems(), // refresh list with new item
+                (data: any) => this.toys = data,
                 error => console.log(error),
                 () => console.log('Save Item Complete')
                 );

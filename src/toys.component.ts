@@ -30,7 +30,7 @@ export class ToyComponent implements OnInit {
         this._dataService
             .GetAll()
             .subscribe(
-                data => this.toys = data,
+                (data: any) => this.toys = data,
                 error => console.log(error),
                 () => console.log('Get all Items complete')
                 );

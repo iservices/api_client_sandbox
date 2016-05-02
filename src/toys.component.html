@@ -3,6 +3,12 @@
   <form>
     <input #toyId placeholder="toy id">
     <button (click)=getItem(toyId.value)>Retrieve Toy by Id</button>
+    <hr/>
+    <br/>
+    <input #toySport placeholder="toy sport">
+    <input #toyType placeholder="toy type">
+    <button (click)=saveItem(toySport.value)>Create Toy</button>
+    <br/>
   </form>
 </div>
 <br/>

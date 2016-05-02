@@ -36,7 +36,7 @@ export class ToyComponent implements OnInit {
                 );
     }
     
-    private getItem(id): void {
+    private getItem(id:number): void {
         this._dataService
             .GetSingle(id)
             .subscribe(
@@ -46,5 +46,21 @@ export class ToyComponent implements OnInit {
                 );
     }
     
+    private saveItem(sport:string, type:string): void {
+        let toyToAdd = new Toy();
+        toyToAdd.sport = sport;
+        toyToAdd.type = 'foo';
+        let retVal;
+        this._dataService
+            .Add(toyToAdd)
+            .subscribe(
+                // (data: any) => retVal = data,
+                (data: any) => this.getAllItems(), // refresh list with new item
+                error => console.log(error),
+                () => console.log('Save Item Complete')
+                );
+        
+    }
+
  
 }

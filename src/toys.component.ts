@@ -1,27 +1,23 @@
 //our root app component
-// import {Component} from 'angular2/core';
-// import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {
   Component, OnInit
 } from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import { DataService } from './dataService';
 import { Configuration } from './configuration';
+import { Toy } from './toy';
 
 @Component({
     selector: 'toys',
     providers: [DataService, Configuration],
-    // providers: [],
-    // directives: [CORE_DIRECTIVES],
     directives: [],
-    templateUrl: 'src/toys.component.html'
+    templateUrl: 'src/toys.component.html' // apparently this needs to be a full path; ./toys.component.html does not work
 })
-
- export class ToyComponent implements OnInit {
+export class ToyComponent implements OnInit {
    
    // TODO get these data from API call
   
-  public toys = [];
+  public toys:Toy[] = [];
   constructor(private _dataService: DataService) { }
   
     ngOnInit() {
@@ -34,7 +30,7 @@ import { Configuration } from './configuration';
         this._dataService
             .GetAll()
             .subscribe(
-                (data: any) => this.toys = data,
+                data => this.toys = data,
                 error => console.log(error),
                 () => console.log('Get all Items complete')
                 );
@@ -49,5 +45,6 @@ import { Configuration } from './configuration';
                 () => console.log('Get Item complete')
                 );
     }
+    
  
 }

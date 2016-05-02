@@ -1,3 +1,11 @@
+
+<div>
+  <form>
+    <input #toyId placeholder="toy id">
+    <button (click)=getItem(toyId.value)>Retrieve Toy by Id</button>
+  </form>
+</div>
+<br/>
 <div *ngFor="#toy of toys; var index=index">
   Id: {{toy.id}}<br/>
   Sport: {{toy.sport}}<br/>

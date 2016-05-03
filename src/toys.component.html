@@ -1,13 +1,24 @@
 
 <div>
   <form>
+    <h3>get all</h3>
+    <button (click)="getAllItems()">Refresh All</button>
+    <hr/>
+    <h3>get by id</h3>
     <input #toyId placeholder="toy id">
     <button (click)="getItem(toyId.value)">Retrieve Toy by Id</button>
     <hr/>
-    <br/>
+    <h3>search by sport and/or type (WIP)</h3>
+    <input #toySportSearch placeholder="toy sport">
+    <input #toyTypeSearch placeholder="toy type">
+    <button (click)="searchItems(toySportSearch.value, toyTypeSearch.value)">Search Toys</button>
+    <hr/>
+    <h3>post a new item</h3>
     <input #toySport placeholder="toy sport">
     <input #toyType placeholder="toy type">
     <button (click)="saveItem(toySport.value, toyType.value)">Create New Toy</button>
+    <hr/>
+    <br/>
   </form>
 </div>
 <br/>

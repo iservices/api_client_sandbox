@@ -39,6 +39,16 @@ export class ToyComponent implements OnInit {
                 );
     }
     
+    private searchItems(sport:string, type:string): void {
+        this._dataService
+            .Search(sport, type)
+            .subscribe(
+                (data: any) => this.toys = data,
+                error => console.log(error),
+                () => console.log('search items complete.')
+                );
+    }
+
     private getItem(id:number): void {
         this._dataService
             .GetSingle(id)
